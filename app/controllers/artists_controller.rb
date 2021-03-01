@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    find_artist   
+    @artist = Artist.new(artist_params)
     @artist.save
 
     redirect_to artist_path(@artist)
